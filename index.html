@@ -1,0 +1,129 @@
+<html>
+	<head>
+		<title>CSS Cube</title>
+
+		<style>
+			body{
+				height: 100%;
+				perspective: 2000px;
+			}
+
+			#wrapp{
+				position: absolute;
+				width: 600px;
+				height: 600px;
+				top: 50%;
+				left: 50%;
+				margin: -300px 0 0 -300px;
+				transform-style: preserve-3d;
+				transform-origin: center center;
+			}
+
+			#wrapp.active{
+				-webkit-animation: rotate 3s infinite;
+			}
+
+			#back{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: 50%;
+				left: 50%;
+				margin: -100px 0 0 -100px;
+				background-color: #b57ff1;
+				transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);	
+			}
+
+			#left{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: 50%;
+				left: 50%;
+				margin: -100px 0 0 -100px;
+				background-color: #ac6fef;
+				transform-origin: left center;
+				transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(-90deg) rotateZ(0deg);			
+			}
+
+			#right{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: 50%;
+				left: 50%;
+				margin: -100px 0 0 -100px;
+				background-color: #a360ee;
+				transform-origin: right center;
+				transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(90deg) rotateZ(0deg);			
+			}
+
+			#bottom {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: 50%;
+				left: 50%;
+				margin: -100px 0 0 -100px;
+				background-color: #9a51ec;
+				transform-origin: bottom center;
+				transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(270deg) rotateY(0deg) rotateZ(0deg);			
+			}
+
+			#top {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: 50%;
+				left: 50%;
+				margin: -100px 0 0 -100px;
+				background-color: #9241ea;
+				transform-origin: top center;
+				transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(-270deg) rotateY(0deg) rotateZ(0deg);			
+			}
+
+
+			#front {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: 50%;
+				left: 50%;
+				margin: -100px 0 0 -100px;
+				background-color: #ac6fef;
+				transform: translateX(0px) translateY(0px) translateZ(200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);			
+			}
+
+			@-webkit-keyframes rotate {
+			  from {
+				transform: rotateY(0deg) rotateX(0deg) ;
+
+			  }
+
+			  to {
+				transform: rotateY(360deg) rotateX(360deg);		 
+			  }
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<div id="wrapp">
+			<div id="top"></div>
+			<div id="bottom"></div>
+			<div id="left"></div>
+			<div id="right"></div>
+			<div id="back"></div>
+			<div id="front"></div>
+		</div>
+
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>
+			$('#wrapp').click(function(){
+				$(this).toggleClass('active');
+			});
+		</script>
+	</body>
+</html>
